@@ -526,7 +526,7 @@ wsproto==1.2.0
 xxhash==3.3.0
 yarl==1.9.2
 yaspin==3.0.1
-zipp==3.15.0
+zipp==3.19.1
 zope.event==4.6
 zope.interface==6.0
 zopfli==0.2.3

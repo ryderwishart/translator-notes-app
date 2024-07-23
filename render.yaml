@@ -3,7 +3,7 @@ services:
     name: translator-notes-backend
     env: python
     buildCommand: |
-      sudo apt-get update && sudo apt-get install -y sqlite3
+      pip install pysqlite3-binary
       pip install -r backend/requirements.txt
     startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port 10000"
     envVars:

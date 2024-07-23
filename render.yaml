@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: translator-notes-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: translator-notes-frontend
+    env: node
+    buildCommand: "cd svelte-frontend && npm install && npm run build"
+    startCommand: "cd svelte-frontend && npm run preview -- --port 3000"
+    envVars:
+      - key: PORT
+        value: 3000

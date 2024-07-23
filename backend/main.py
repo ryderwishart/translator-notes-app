@@ -18,11 +18,15 @@ prompt_generator = PromptGenerator(chroma_manager, bible_manager)
 llm_interface = LLMInterface()
 
 # Embed initial documents
-initial_file_path = "./data/en_tn/combined.txt"
-if os.path.exists(initial_file_path):
-    chroma_manager.add_documents(initial_file_path)
+initial_folder_path = "./data/en_tn"
+if os.path.exists(initial_folder_path):
+    for file in os.listdir(initial_folder_path):
+        if file.endswith('.tsv'):
+            print(f"Embedding file: {file}")
+            file_path = os.path.join(initial_folder_path, file)
+            chroma_manager.add_documents(file_path)
 else:
-    raise FileNotFoundError(f"Initial file '{initial_file_path}' not found")
+    raise FileNotFoundError(f"Initial folder '{initial_folder_path}' not found")
 
 class QueryInput(BaseModel):
     query: str

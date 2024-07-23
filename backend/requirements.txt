@@ -144,7 +144,7 @@ google-auth==2.25.2
 googleapis-common-protos==1.62.0
 gptcache==0.1.32
 gql==3.4.1
-gradio==4.19.2
+gradio==4.37.1
 gradio_client==0.10.1
 graphql-core==3.2.3
 greenlet==3.0.0
